@@ -23,7 +23,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="304dp"
-        tools:src="@drawable/unknown" />
+        tools:src="@drawable/img1" />
 
     <Button
         android:id="@+id/executeButton"
