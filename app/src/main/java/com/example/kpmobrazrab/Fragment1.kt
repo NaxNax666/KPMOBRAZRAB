@@ -29,7 +29,7 @@ class Fragment1 : Fragment() {
 
             val bitmap = (binding.imageView.getDrawable() as BitmapDrawable).bitmap
 
-            binding.imageView2.setImageBitmap(CoreSystem.ConvertToBlackWhite(bitmap))
+            binding.imageView2.setImageBitmap(CoreSystem.DoNothing(bitmap))
         }
     }
 

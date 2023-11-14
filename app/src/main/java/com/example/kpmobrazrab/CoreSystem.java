@@ -181,12 +181,27 @@ public class CoreSystem {
         for(int i=0;i<y;i++){
             Log.d("Writing", "row "+String.valueOf(i));
             for(int j=0;j<x;j++){
-                dest.setPixel(j,i, Color.argb(0xFF, ByteToInt(px2blue[y-i-1][j]), ByteToInt(px2green[y-i-1][j]),ByteToInt(px2blue[y-i-1][j])));
+                dest.setPixel(j,i, Color.argb(0xFF, ByteToInt(px2red[y-i-1][j]), ByteToInt(px2green[y-i-1][j]),ByteToInt(px2blue[y-i-1][j])));
 
 
                 ;}
             ;}
         return dest;
+    }
+
+    public static Bitmap DoNothing(Bitmap bitmap){
+        ReadBMPIntoArray(bitmap);
+        for(int i=0;i<y;i++){
+            for(int j=0;j<x;j++){
+                int red=ByteToInt(px1red[i][j]);
+                int green=ByteToInt(px1green[i][j]);
+                int blue=ByteToInt(px1blue[i][j]);
+                px2red[i][j]=IntToByte(red);
+                px2green[i][j]=IntToByte(green);
+                px2blue[i][j]=IntToByte(blue);
+                ;}
+            ;}
+        return WriteArrayIntoBMP();
     }
 
     public static Bitmap ConvertToBlackWhite(Bitmap bitmap) {//Конвертация изображения в оттенки серого
@@ -210,8 +225,8 @@ public class CoreSystem {
 
     }
 
-    public static int AddWhiteNoise(String filename, int middle, int strength) {//Добавление белого шума к изображению
-        //ReadBMPIntoArray(new Bitmap());
+    public static Bitmap AddWhiteNoise(Bitmap bitmap, int middle, int strength) {//Добавление белого шума к изображению
+        ReadBMPIntoArray(bitmap);
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 int red=ByteToInt(px1red[i][j]);
@@ -225,36 +240,14 @@ public class CoreSystem {
                 px2blue[i][j]=IntToByte(blue);
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", White Noise, middle="+middle+", strength="+strength+".bmp";
-        //WriteArrayIntoBMP(newfilename);
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //String newfilename=CutFileExt(filename)+", White Noise, middle="+middle+", strength="+strength+".bmp";
+        return WriteArrayIntoBMP();
+
     }
 
-    public static int ConvertToBlackWhite(String filename) {//Конвертация изображения в оттенки серого
-        //ReadBMPIntoArray(filename);
-        for(int i=0;i<y;i++){
-            for(int j=0;j<x;j++){
-                int red=ByteToInt(px1red[i][j]);
-                int green=ByteToInt(px1green[i][j]);
-                int blue=ByteToInt(px1blue[i][j]);
-                int lum=(int)(0.299*red+0.587*green+0.114*blue);
-                red= lum;
-                green= lum;
-                blue= lum;
-                px2red[i][j]=IntToByte(red);
-                px2green[i][j]=IntToByte(green);
-                px2blue[i][j]=IntToByte(blue);
-                ;}
-            ;}
-        String newfilename=CutFileExt(filename)+", Black and White.bmp";
-        //WriteArrayIntoBMP(newfilename);
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
-    }
 
-    public static int CutColors(String filename, int strength) {//Прореживание цветов
-        //ReadBMPIntoArray(filename);
+    public static Bitmap CutColors(Bitmap bitmap, int strength) {//Прореживание цветов
+        ReadBMPIntoArray(bitmap);
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 int red=ByteToInt(px1red[i][j]);
@@ -268,14 +261,13 @@ public class CoreSystem {
                 px2blue[i][j]=IntToByte(blue);
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", Cut Colors, strength="+strength+".bmp";
-        //WriteArrayIntoBMP(newfilename);
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //String newfilename=CutFileExt(filename)+", Cut Colors, strength="+strength+".bmp";
+        return WriteArrayIntoBMP();
+
     }
 
-    public static int Pixelization(String filename, int pixel_size) {//Пикселизация
-        //ReadBMPIntoArray(filename);
+    public static Bitmap Pixelization(Bitmap bitmap, int pixel_size) {//Пикселизация
+        ReadBMPIntoArray(bitmap);
         int nx=(int)(Math.floor(1.0*x/pixel_size)-1);//Количество больших пикселей по горизонтали
         int ny=(int)(Math.floor(1.0*y/pixel_size)-1);//Округление до целого в меньшую сторону (-1 чтобы от 0 считать, как и пиксели)
         //Пикселизация для Red
@@ -340,14 +332,14 @@ public class CoreSystem {
                 ;}
             ;}
         for(int i=0;i<y;i++){for(int j=0;j<x;j++){px2blue[i][j]=IntToByte(pxbuf[i][j]);};}
-        String newfilename=CutFileExt(filename)+", Pixelization, pixel_size="+pixel_size+".bmp";
+        //String newfilename=CutFileExt(filename)+", Pixelization, pixel_size="+pixel_size+".bmp";
         //WriteArrayIntoBMP(newfilename);
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int GaussianBlur(String filename, int size, double sigma) {//Размытие по Гауссу
-        //ReadBMPIntoArray(filename);
+    public static Bitmap GaussianBlur(Bitmap bitmap, int size, double sigma) {//Размытие по Гауссу
+        ReadBMPIntoArray(bitmap);
         //Заполнение матрицы Гаусса
         double A=1.0;
         double sum=0.0;
@@ -414,14 +406,14 @@ public class CoreSystem {
                 ;}
             ;}
 
-        String newfilename=CutFileExt(filename)+", Gaussian Blur, size="+size+", sigma="+sigma+".bmp";
+        //String newfilename=CutFileExt(filename)+", Gaussian Blur, size="+size+", sigma="+sigma+".bmp";
         //WriteArrayIntoBMP(newfilename);
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int MirrorVertAxis(String filename) {//Развернуть относительно вертикальной оси
-        //ReadBMPIntoArray(filename);
+    public static Bitmap MirrorVertAxis(Bitmap bitmap) {//Развернуть относительно вертикальной оси
+        ReadBMPIntoArray(bitmap);
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 px2red[i][j]=px1red[i][x-j];
@@ -429,14 +421,14 @@ public class CoreSystem {
                 px2blue[i][j]=px1blue[i][x-j];
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", Mirror Vert Axis.bmp";
+        //String newfilename=CutFileExt(filename)+", Mirror Vert Axis.bmp";
         //WriteArrayIntoBMP(newfilename);
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int MirrorHorizAxis(String filename) {//Развернуть относительно горизонтальной оси
-        //ReadBMPIntoArray(filename);
+    public static Bitmap MirrorHorizAxis(Bitmap bitmap) {//Развернуть относительно горизонтальной оси
+        ReadBMPIntoArray(bitmap);
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 px2red[i][j]=px1red[y-i][j];
@@ -444,14 +436,14 @@ public class CoreSystem {
                 px2blue[i][j]=px1blue[y-i][j];
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", Mirror Horiz Axis.bmp";
+        //String newfilename=CutFileExt(filename)+", Mirror Horiz Axis.bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int MirrorBothAxis(String filename) {//Развернуть относительно обоих осей
-        //ReadBMPIntoArray(filename);
+    public static Bitmap MirrorBothAxis(Bitmap bitmap) {//Развернуть относительно обоих осей
+        ReadBMPIntoArray(bitmap);
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 px2red[i][j]=px1red[y-i][x-j];
@@ -459,14 +451,14 @@ public class CoreSystem {
                 px2blue[i][j]=px1blue[y-i][x-j];
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", Mirror Both Axis.bmp";
+        //String newfilename=CutFileExt(filename)+", Mirror Both Axis.bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int ChangeRGB(String filename, int RedDif, int GreenDif, int BlueDif) {//Увеличить или уменьшить Red, Green, Blue
-        //ReadBMPIntoArray(filename);
+    public static Bitmap ChangeRGB(Bitmap bitmap, int RedDif, int GreenDif, int BlueDif) {//Увеличить или уменьшить Red, Green, Blue
+        ReadBMPIntoArray(bitmap);
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 px2red[i][j]=IntToByte(ByteToInt(px1red[i][j])+RedDif);
@@ -474,14 +466,14 @@ public class CoreSystem {
                 px2blue[i][j]=IntToByte(ByteToInt(px1blue[i][j])+BlueDif);
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", Change RGB, Red="+RedDif+", Green="+GreenDif+", BlueDif="+BlueDif+".bmp";
+        //String newfilename=CutFileExt(filename)+", Change RGB, Red="+RedDif+", Green="+GreenDif+", BlueDif="+BlueDif+".bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int SetRed(String filename, int RedNew) {//Установить фиксированное значение Red
-        //ReadBMPIntoArray(filename);
+    public static Bitmap SetRed(Bitmap bitmap, int RedNew) {//Установить фиксированное значение Red
+        ReadBMPIntoArray(bitmap);
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 px2red[i][j]=px1red[i][j];
@@ -490,14 +482,14 @@ public class CoreSystem {
                 px2red[i][j]=IntToByte(RedNew);//Меняем Red
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", Set Red, New Red="+RedNew+".bmp";
+        //String newfilename=CutFileExt(filename)+", Set Red, New Red="+RedNew+".bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int SetGreen(String filename, int GreenNew) {//Установить фиксированное значение Green
-        //ReadBMPIntoArray(filename);
+    public static Bitmap SetGreen(Bitmap bitmap, int GreenNew) {//Установить фиксированное значение Green
+        ReadBMPIntoArray(bitmap);
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 px2red[i][j]=px1red[i][j];
@@ -506,14 +498,14 @@ public class CoreSystem {
                 px2green[i][j]=IntToByte(GreenNew);//Меняем Green
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", Set Green, New Green="+GreenNew+".bmp";
+        //String newfilename=CutFileExt(filename)+", Set Green, New Green="+GreenNew+".bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int SetBlue(String filename, int BlueNew) {//Установить фиксированное значение Blue
-        //ReadBMPIntoArray(filename);
+    public static Bitmap SetBlue(Bitmap bitmap, int BlueNew) {//Установить фиксированное значение Blue
+        ReadBMPIntoArray(bitmap);
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 px2red[i][j]=px1red[i][j];
@@ -522,14 +514,14 @@ public class CoreSystem {
                 px2blue[i][j]=IntToByte(BlueNew);//Меняем Blue
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", Set Blue, New Blue="+BlueNew+".bmp";
+        //String newfilename=CutFileExt(filename)+", Set Blue, New Blue="+BlueNew+".bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int ChangeYUV(String filename, int Ydif, int Udif, int Vdif) {//Увеличить или уменьшить Y - яркость или UV - цветоразностные компоненты
-        //ReadBMPIntoArray(filename);
+    public static Bitmap ChangeYUV(Bitmap bitmap, int Ydif, int Udif, int Vdif) {//Увеличить или уменьшить Y - яркость или UV - цветоразностные компоненты
+        ReadBMPIntoArray(bitmap);
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 int R=ByteToInt(px1red[i][j]);
@@ -543,14 +535,14 @@ public class CoreSystem {
                 px2blue[i][j]=IntToByte((int)(Y+2.03211*(U-128)));
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", Change YUV, Y="+Ydif+", U="+Udif+", V="+Vdif+".bmp";
+        //String newfilename=CutFileExt(filename)+", Change YUV, Y="+Ydif+", U="+Udif+", V="+Vdif+".bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int SetY(String filename, int newY) {//Установить Y - яркость
-        //ReadBMPIntoArray(filename);
+    public static Bitmap SetY(Bitmap bitmap, int newY) {//Установить Y - яркость
+        ReadBMPIntoArray(bitmap);
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 int R=ByteToInt(px1red[i][j]);
@@ -565,14 +557,14 @@ public class CoreSystem {
                 px2blue[i][j]=IntToByte((int)(Y+2.03211*(U-128)));
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", Set Y, Y="+newY+".bmp";
+        //String newfilename=CutFileExt(filename)+", Set Y, Y="+newY+".bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int SetU(String filename, int newU) {//Установить U - цветоразностный компонент
-        //ReadBMPIntoArray(filename);
+    public static Bitmap SetU(Bitmap bitmap, int newU) {//Установить U - цветоразностный компонент
+        ReadBMPIntoArray(bitmap);
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 int R=ByteToInt(px1red[i][j]);
@@ -587,14 +579,14 @@ public class CoreSystem {
                 px2blue[i][j]=IntToByte((int)(Y+2.03211*(U-128)));
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", Set U, U="+newU+".bmp";
+        //String newfilename=CutFileExt(filename)+", Set U, U="+newU+".bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int SetV(String filename, int newV) {//Установить V - цветоразностный компонент
-        //ReadBMPIntoArray(filename);
+    public static Bitmap SetV(Bitmap bitmap, int newV) {//Установить V - цветоразностный компонент
+        ReadBMPIntoArray(bitmap);
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 int R=ByteToInt(px1red[i][j]);
@@ -609,16 +601,16 @@ public class CoreSystem {
                 px2blue[i][j]=IntToByte((int)(Y+2.03211*(U-128)));
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", Set V, V="+newV+".bmp";
+        //String newfilename=CutFileExt(filename)+", Set V, V="+newV+".bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
 
     //Функция ChangeCMYK работает очень криво и неправильно
-    public static int ChangeCMYK(String filename, int Cdif, int Mdif, int Ydif, int Kdif) {//Увеличить или уменьшить компоненты в цветовой модели CMYK
-        //ReadBMPIntoArray(filename);
+    public static Bitmap ChangeCMYK(Bitmap bitmap, int Cdif, int Mdif, int Ydif, int Kdif) {//Увеличить или уменьшить компоненты в цветовой модели CMYK
+        ReadBMPIntoArray(bitmap);
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 int R=ByteToInt(px1red[i][j]);
@@ -640,14 +632,14 @@ public class CoreSystem {
                 px2blue[i][j]=IntToByte((int)(Blue));
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", Change CMYK, C="+Cdif+", M="+Mdif+", Y="+Ydif+", K="+Kdif+".bmp";
+        //String newfilename=CutFileExt(filename)+", Change CMYK, C="+Cdif+", M="+Mdif+", Y="+Ydif+", K="+Kdif+".bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int NegativeRGB(String filename, int NegR, int NegG, int NegB) {//Поменять значения R, G, B на неготив
-        //ReadBMPIntoArray(filename);//0 или меньше = без негатива, 1 или больше = негатив
+    public static Bitmap NegativeRGB(Bitmap bitmap, int NegR, int NegG, int NegB) {//Поменять значения R, G, B на неготив
+        ReadBMPIntoArray(bitmap);//0 или меньше = без негатива, 1 или больше = негатив
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 int R=ByteToInt(px1red[i][j]);
@@ -661,14 +653,14 @@ public class CoreSystem {
                 px2blue[i][j]=IntToByte(B);
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", NegativeRGB, R="+NegR+", G="+NegG+", B="+NegB+".bmp";
+        //String newfilename=CutFileExt(filename)+", NegativeRGB, R="+NegR+", G="+NegG+", B="+NegB+".bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int NegativeYUV(String filename, int NegY, int NegU, int NegV) {//Поменять значения Y, U, V на неготив
-        //ReadBMPIntoArray(filename);//0 или меньше = без негатива, 1 или больше = негатив
+    public static Bitmap NegativeYUV(Bitmap bitmap, int NegY, int NegU, int NegV) {//Поменять значения Y, U, V на неготив
+        ReadBMPIntoArray(bitmap);//0 или меньше = без негатива, 1 или больше = негатив
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
                 int R=ByteToInt(px1red[i][j]);
@@ -685,14 +677,14 @@ public class CoreSystem {
                 px2blue[i][j]=IntToByte((int)(Y+2.03211*(U-128)));
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", NegativeYUV, Y="+NegY+", U="+NegU+", V="+NegV+".bmp";
+        //String newfilename=CutFileExt(filename)+", NegativeYUV, Y="+NegY+", U="+NegU+", V="+NegV+".bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int ConvolutionWithMatr(String filename, int matrnum) {//Свёртка с матрицей
-        //ReadBMPIntoArray(filename);//Значения matrnum - от 0 до 9
+    public static Bitmap ConvolutionWithMatr(Bitmap bitmap, int matrnum) {//Свёртка с матрицей
+        ReadBMPIntoArray(bitmap);//Значения matrnum - от 0 до 9
         double[][] matr = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
         String matrname="";
         //Выбираем матрицу свёртки
@@ -771,14 +763,14 @@ public class CoreSystem {
                 ;}
             ;}
 
-        String newfilename=CutFileExt(filename)+", Свёртка "+matrnum+" - "+matrname+".bmp";
+        //String newfilename=CutFileExt(filename)+", Свёртка "+matrnum+" - "+matrname+".bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int SobelOperator(String filename) {//Оператор Собеля (выделение границ двумя свёртками)
-        //ReadBMPIntoArray(filename);
+    public static Bitmap SobelOperator(Bitmap bitmap) {//Оператор Собеля (выделение границ двумя свёртками)
+        ReadBMPIntoArray(bitmap);
         double[][] verticalSobelKernel = {{-1.0, 0.0, 1.0}, {-2.0, 0.0, 2.0}, {-1.0, 0.0, 1.0}};
         double[][] matr = verticalSobelKernel;//Вертикальное ядро
 
@@ -881,14 +873,14 @@ public class CoreSystem {
                 ;}
             ;}
 
-        String newfilename=CutFileExt(filename)+", Оператор Собеля.bmp";
+        //String newfilename=CutFileExt(filename)+", Оператор Собеля.bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int RobertsCross(String filename) {//Оператор Робертса (простейшее выделение границ)
-        //ReadBMPIntoArray(filename);
+    public static Bitmap RobertsCross(Bitmap bitmap) {//Оператор Робертса (простейшее выделение границ)
+        ReadBMPIntoArray(bitmap);
         double buf1,buf2,buf3;
         for(int i=0;i<y;i++){for(int j=0;j<x;j++){ pxbuf[i][j]=ByteToInt(px1red[i][j]);;};}
         for(int i=0;i<y;i++){//Для Red
@@ -926,14 +918,14 @@ public class CoreSystem {
                 px2blue[i][j]=IntToByte((int)(buf3));
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", RobertsCross.bmp";
+        //String newfilename=CutFileExt(filename)+", RobertsCross.bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int AutoLumAndConReg(String filename) {//Автоматическая регулировка значений яркости и контраста
-        //ReadBMPIntoArray(filename);
+    public static Bitmap AutoLumAndConReg(Bitmap bitmap) {//Автоматическая регулировка значений яркости и контраста
+        ReadBMPIntoArray(bitmap);
         double maxlum=0.0;
         double minlum=255.0;
         for(int i=0;i<y;i++){
@@ -966,24 +958,24 @@ public class CoreSystem {
                 px2blue[i][j]=IntToByte((int)(Y+2.03211*(U-128)));
                 ;}
             ;}
-        String newfilename=CutFileExt(filename)+", AutoLumAndConReg.bmp";
+        //String newfilename=CutFileExt(filename)+", AutoLumAndConReg.bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
-    public static int ShiftImage(String filename, int addright, int addup) {//Циклически сдвинуть изображение
-        //ReadBMPIntoArray(filename);
+    public static Bitmap ShiftImage(Bitmap bitmap, int addright, int addup) {//Циклически сдвинуть изображение
+        ReadBMPIntoArray(bitmap);
         for(int i=0;i<y;i++){ for(int j=0;j<x;j++){ pxbuf[i][j]=ByteToInt(px1red[i][j]);};}
         for(int i=0;i<y;i++){ for(int j=0;j<x;j++){ px2red[i][j]=IntToByte(PixelShifted(i-addup,j-addright));};}
         for(int i=0;i<y;i++){ for(int j=0;j<x;j++){ pxbuf[i][j]=ByteToInt(px1green[i][j]);};}
         for(int i=0;i<y;i++){ for(int j=0;j<x;j++){ px2green[i][j]=IntToByte(PixelShifted(i-addup,j-addright));};}
         for(int i=0;i<y;i++){ for(int j=0;j<x;j++){ pxbuf[i][j]=ByteToInt(px1blue[i][j]);};}
         for(int i=0;i<y;i++){ for(int j=0;j<x;j++){ px2blue[i][j]=IntToByte(PixelShifted(i-addup,j-addright));};}
-        String newfilename=CutFileExt(filename)+", Сдвиг на "+addright+" вправо и на "+addup+" вверх.bmp";
+        //String newfilename=CutFileExt(filename)+", Сдвиг на "+addright+" вправо и на "+addup+" вверх.bmp";
         //WriteArrayIntoBMP();
-        System.out.println("Создан файл: " + newfilename);
-        return 0;
+        //System.out.println("Создан файл: " + newfilename);
+       return WriteArrayIntoBMP();
     }
 
 
