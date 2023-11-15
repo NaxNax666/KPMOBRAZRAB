@@ -18,5 +18,21 @@
         <action
             android:id="@+id/action_mainFragment_to_fragment2"
             app:destination="@id/fragment2" />
+        <action
+            android:id="@+id/action_mainFragment_to_fragment12"
+            app:destination="@id/fragment12" />
+        <action
+            android:id="@+id/action_mainFragment_to_blackWhiteFragment"
+            app:destination="@id/blackWhiteFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/fragment12"
+        android:name="com.example.kpmobrazrab.Fragment1"
+        android:label="fragment_1"
+        tools:layout="@layout/fragment_1" />
+    <fragment
+        android:id="@+id/blackWhiteFragment"
+        android:name="com.example.kpmobrazrab.blackWhiteFragment"
+        android:label="fragment_black_white"
+        tools:layout="@layout/fragment_black_white" />
 </navigation>

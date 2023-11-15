@@ -6,31 +6,30 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.kpmobrazrab.databinding.Fragment1Binding
+import com.example.kpmobrazrab.databinding.FragmentBlackWhiteBinding
 
 
+class blackWhiteFragment : Fragment() {
 
-
-class Fragment1 : Fragment() {
-
-    lateinit var binding: Fragment1Binding
+    lateinit var binding: FragmentBlackWhiteBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = Fragment1Binding.inflate(layoutInflater)
+        binding = FragmentBlackWhiteBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.imageView.setImageResource(R.drawable.img1)
-        binding.executeButton.setOnClickListener {
+        binding.srcImageWB.setImageResource(R.drawable.img1)
+        binding.executeButtonWB.setOnClickListener {
 
-            val bitmap = (binding.imageView.getDrawable() as BitmapDrawable).bitmap
+            val bitmap = (binding.srcImageWB.getDrawable() as BitmapDrawable).bitmap
 
-            binding.imageView2.setImageBitmap(CoreSystem.MirrorVertAxis(bitmap))
+            binding.destImageWB.setImageBitmap(CoreSystem.ConvertToBlackWhite(bitmap))
         }
     }
+
 
 }

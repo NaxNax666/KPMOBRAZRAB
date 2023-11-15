@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment1">
+    tools:context=".blackWhiteFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,24 +18,23 @@
         />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/srcImageWB"
         android:layout_width="match_parent"
         android:layout_height="304dp"
         tools:src="@drawable/img1" />
 
-    <Button
-        android:id="@+id/executeButton"
-        android:layout_width="392dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="265dp"
-        android:text="Развернуть" />
-
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/destImageWB"
         android:layout_width="match_parent"
         android:layout_height="304dp"
         android:layout_marginTop="350dp"
         tools:src="@tools:sample/backgrounds/scenic" />
 
+    <Button
+        android:id="@+id/executeButtonWB"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="310dp"
+        android:text="ЧБ" />
 
 </FrameLayout>
