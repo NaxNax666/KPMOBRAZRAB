@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainFragment">
      <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/srcImage"
                 android:layout_width="match_parent"
                 android:layout_height="307dp"
                 tools:src="@tools:sample/avatars" />
@@ -24,18 +24,19 @@
         android:text="Режим работы с Изображением" />
 
     <Button
-        android:id="@+id/whiteBlackButton"
+        android:id="@+id/startButton"
         android:layout_width="383dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="350dp"
-        android:text="Оттенки Серого" />
+        android:layout_marginTop="410dp"
+        android:text="Начать" />
 
     <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="410dp" />
+        android:id="@+id/chooseSpinner"
+        android:layout_width="368dp"
+        android:layout_height="43dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="350dp" />
 
 
     <!-- TODO: Update blank fragment layout -->
