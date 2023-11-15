@@ -2,4 +2,28 @@
     <string name="app_name">KPMOBRAZRAB</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="function_array">
+        <item>Конвертация изображения в оттенки серого</item>
+        <item>Добавление белого шума к изображению</item>
+        <item>Прореживание цветов</item>
+        <item>Пикселизация</item>
+        <item>Размытие по Гауссу</item>
+        <item>Развернуть относительно вертикальной оси</item>
+        <item>Развернуть относительно горизонтальной оси</item>
+        <item>Развернуть относительно обоих осей</item>
+        <item>Увеличить или уменьшить Red, Green, Blue</item>
+        <item>Установить фиксированное значение Red</item>
+        <item>Установить фиксированное значение Green</item>
+        <item>Установить фиксированное значение Blue</item>
+        <item>Увеличить или уменьшить Y - яркость или UV - цветоразностные компоненты</item>
+        <item>Установить Y - яркость</item>
+        <item>Установить V - цветоразностный компонент</item>
+        <item>Увеличить или уменьшить компоненты в цветовой модели CMYK</item>
+        <item>Поменять значения R, G, B на неготив</item>
+        <item>Свёртка с матрицей</item>
+        <item>Оператор Собеля (выделение границ двумя свёртками)</item>
+        <item>Оператор Робертса (простейшее выделение границ)</item>
+        <item>Автоматическая регулировка значений яркости и контраста</item>
+        <item>Циклически сдвинуть изображение</item>
+    </string-array>
 </resources>

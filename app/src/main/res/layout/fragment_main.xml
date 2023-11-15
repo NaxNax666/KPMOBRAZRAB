@@ -28,9 +28,14 @@
         android:layout_width="383dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="350dp"
         android:text="Оттенки Серого" />
 
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="410dp" />
 
 
     <!-- TODO: Update blank fragment layout -->
