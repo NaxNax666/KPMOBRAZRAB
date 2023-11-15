@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         }
         binding.buttonFragment2.setOnClickListener {
-            goToFragment(Fragment2())
+            goToFragment(MainFragment())
         }
     }
 

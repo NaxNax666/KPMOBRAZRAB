@@ -29,8 +29,8 @@
         android:id="@+id/executeButton"
         android:layout_width="392dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:text="Button" />
+        android:layout_marginTop="265dp"
+        android:text="Развернуть" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -38,5 +38,12 @@
         android:layout_height="304dp"
         android:layout_marginTop="350dp"
         tools:src="@tools:sample/backgrounds/scenic" />
+
+    <Button
+        android:id="@+id/executeButton2"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="310dp"
+        android:text="ЧБ" />
 
 </FrameLayout>

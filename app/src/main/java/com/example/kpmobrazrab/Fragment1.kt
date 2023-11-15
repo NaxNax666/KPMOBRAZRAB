@@ -29,7 +29,13 @@ class Fragment1 : Fragment() {
 
             val bitmap = (binding.imageView.getDrawable() as BitmapDrawable).bitmap
 
-            binding.imageView2.setImageBitmap(CoreSystem.DoNothing(bitmap))
+            binding.imageView2.setImageBitmap(CoreSystem.MirrorVertAxis(bitmap))
+        }
+        binding.executeButton2.setOnClickListener {
+
+            val bitmap = (binding.imageView.getDrawable() as BitmapDrawable).bitmap
+
+            binding.imageView2.setImageBitmap(CoreSystem.ConvertToBlackWhite(bitmap))
         }
     }
 

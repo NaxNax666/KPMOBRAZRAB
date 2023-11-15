@@ -163,8 +163,9 @@ public class CoreSystem {
         x = bitmap.getWidth();
         y = bitmap.getHeight();
         bmapConf = bitmap.getConfig();
+        Log.d("Reading", "Start reading");
         for(int i=0;i<y;i++){
-            Log.d("Reading", "row "+String.valueOf(i));
+
             for(int j=0;j<x;j++){
                 px1blue[y-i-1][j]=IntToByte((bitmap.getPixel(j, i)>>0)&0xFF);
                 px1green[y-i-1][j]=IntToByte((bitmap.getPixel(j, i)>>8)&0xFF);
@@ -172,20 +173,24 @@ public class CoreSystem {
 
                 ;}
             ;}
+        Log.d("Reading", "Finish reading");
+        Log.d("Processing", "Start Processing");
         return 0;
     }
 
     public static Bitmap WriteArrayIntoBMP() {//Запись массивов px2r, px2g, px2b и заголовка в выходной BMP файл
+        Log.d("Processing", "End Processing");
         Bitmap dest = Bitmap.createBitmap(
                 x, y, bmapConf);
+        Log.d("Writing", "Start writing");
         for(int i=0;i<y;i++){
-            Log.d("Writing", "row "+String.valueOf(i));
             for(int j=0;j<x;j++){
                 dest.setPixel(j,i, Color.argb(0xFF, ByteToInt(px2red[y-i-1][j]), ByteToInt(px2green[y-i-1][j]),ByteToInt(px2blue[y-i-1][j])));
 
 
                 ;}
             ;}
+        Log.d("Writing", "End writing");
         return dest;
     }
 
