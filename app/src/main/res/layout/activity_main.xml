@@ -6,36 +6,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <fragment
+        android:id="@+id/fragmentContainer"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:id="@+id/fragmentContainer"
-        android:layout_marginBottom="30dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/buttonFragment1"
-        app:navGraph = "@navigation/nav_graph"
-        />
-    <Button
-        android:layout_width="160dp"
-        android:layout_height="60dp"
-        android:id="@+id/buttonFragment1"
-        android:textSize="20sp"
-        android:text="F1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonFragment2"
-        />
-    <Button
-        android:layout_width="160dp"
-        android:layout_height="60dp"
-        android:id="@+id/buttonFragment2"
-        android:textSize="20sp"
-        android:text="F2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonFragment1"
-        />
+        app:navGraph="@navigation/nav_graph" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

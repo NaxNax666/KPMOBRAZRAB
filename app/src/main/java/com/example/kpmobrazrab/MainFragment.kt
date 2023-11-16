@@ -31,11 +31,24 @@ class MainFragment : Fragment() {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             binding.chooseSpinner.adapter = adapter
         }
+
         binding.startButton.setOnClickListener {
+            val choose = binding.chooseSpinner.selectedItemPosition
             Log.d("Navigate", MAIN.navController.currentDestination?.id.toString())
-            if(MAIN.navController.currentDestination?.id == R.id.mainFragment) {
-                MAIN.navController.navigate(R.id.action_mainFragment_to_fragment2)
+            when(choose){
+                0->{
+                    if(MAIN.navController.currentDestination?.id == R.id.mainFragment) {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_blackWhiteFragment)
+                    }
+                }
+                1->{
+                    if(MAIN.navController.currentDestination?.id == R.id.mainFragment) {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_addNoizeFragment)
+                    }
+                }
             }
+
+
         }
 
 
