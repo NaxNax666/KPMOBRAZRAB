@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_mainFragment_to_gaussianBlurFragment"
             app:destination="@id/gaussianBlurFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_mirrorVertAxisFragment"
+            app:destination="@id/mirrorVertAxisFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment12"
@@ -67,4 +70,8 @@
         android:name="com.example.kpmobrazrab.gaussianBlurFragment"
         android:label="fragment_gaussian_blur"
         tools:layout="@layout/fragment_gaussian_blur" />
+    <fragment
+        android:id="@+id/mirrorVertAxisFragment"
+        android:name="com.example.kpmobrazrab.mirrorVertAxisFragment"
+        android:label="mirrorVertAxisFragment" />
 </navigation>
