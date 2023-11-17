@@ -27,6 +27,9 @@
         <action
             android:id="@+id/action_mainFragment_to_addNoizeFragment"
             app:destination="@id/addNoizeFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_cutColorsFragment"
+            app:destination="@id/cutColorsFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment12"
@@ -43,4 +46,9 @@
         android:name="com.example.kpmobrazrab.addNoizeFragment"
         android:label="fragment_add_noize"
         tools:layout="@layout/fragment_add_noize" />
+    <fragment
+        android:id="@+id/cutColorsFragment"
+        android:name="com.example.kpmobrazrab.cutColorsFragment"
+        android:label="fragment_cut_colors"
+        tools:layout="@layout/fragment_cut_colors" />
 </navigation>

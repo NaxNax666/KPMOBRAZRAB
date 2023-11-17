@@ -46,6 +46,12 @@ class MainFragment : Fragment() {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_addNoizeFragment)
                     }
                 }
+                2-> {
+                    if (MAIN.navController.currentDestination?.id == R.id.mainFragment) {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_cutColorsFragment)
+
+                    }
+                }
             }
 
 

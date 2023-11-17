@@ -3,52 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".addNoizeFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".cutColorsFragment">
 
     <ImageView
-        android:id="@+id/srcImageAWN"
+        android:id="@+id/srcImageCC"
         android:layout_width="match_parent"
         android:layout_height="304dp"
         tools:src="@drawable/img1" />
 
     <ImageView
-        android:id="@+id/destImageAWN"
+        android:id="@+id/destImageCC"
         android:layout_width="match_parent"
         android:layout_height="259dp"
         android:layout_gravity="bottom"
         tools:src="@tools:sample/backgrounds/scenic" />
 
     <Button
-        android:id="@+id/executeButtonAWN"
+        android:id="@+id/executeButtonCC"
         android:layout_width="387dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="400dp"
-        android:text="Шум Гаусса" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="55dp"
-        android:layout_height="wrap_content"
-
-        android:layout_gravity="left"
-        android:layout_marginTop="310dp"
-        android:autoSizeTextType="uniform"
-        android:foregroundGravity="center"
-        android:gravity="center|center_horizontal"
-        android:text="Middle" />
-
-    <EditText
-        android:id="@+id/middleEditText"
-        android:layout_width="154dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="300dp"
-        android:autoSizeTextType="uniform"
-        android:ems="10"
-        android:text="22" />
+        android:text="Прореживание Цветов" />
 
     <TextView
         android:id="@+id/textView3"
@@ -64,15 +40,13 @@
         android:text="Strength" />
 
     <EditText
-        android:id="@+id/strenghtEditText"
+        android:id="@+id/strenghtEditTextCC"
         android:layout_width="149dp"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:layout_marginLeft="55dp"
+        android:layout_marginStart="55dp"
         android:layout_marginTop="350dp"
         android:autoSizeTextType="uniform"
         android:ems="10" />
-
-
 
 </FrameLayout>

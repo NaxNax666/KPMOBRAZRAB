@@ -22,7 +22,9 @@ class addNoizeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         binding.srcImageAWN.setImageResource(R.drawable.img1)
+
         binding.executeButtonAWN.setOnClickListener {
 
             val middle = binding.middleEditText.text.toString().toInt()
@@ -30,7 +32,6 @@ class addNoizeFragment : Fragment() {
             if (abs(middle) > 256){
                 return@setOnClickListener
             }
-
 
             val bitmap = (binding.srcImageAWN.getDrawable() as BitmapDrawable).bitmap
 
