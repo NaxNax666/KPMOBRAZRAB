@@ -58,6 +58,13 @@ class MainFragment : Fragment() {
 
                     }
                 }
+                4-> {
+                    if (MAIN.navController.currentDestination?.id == R.id.mainFragment) {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_gaussianBlurFragment)
+
+                    }
+                }
+
             }
 
 

@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_mainFragment_to_pixelizationFragment"
             app:destination="@id/pixelizationFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_gaussianBlurFragment"
+            app:destination="@id/gaussianBlurFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment12"
@@ -59,4 +62,9 @@
         android:name="com.example.kpmobrazrab.pixelizationFragment"
         android:label="fragment_pixelization"
         tools:layout="@layout/fragment_pixelization" />
+    <fragment
+        android:id="@+id/gaussianBlurFragment"
+        android:name="com.example.kpmobrazrab.gaussianBlurFragment"
+        android:label="fragment_gaussian_blur"
+        tools:layout="@layout/fragment_gaussian_blur" />
 </navigation>
