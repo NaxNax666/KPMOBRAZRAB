@@ -35,47 +35,38 @@ class MainFragment : Fragment() {
         binding.startButton.setOnClickListener {
             val choose = binding.chooseSpinner.selectedItemPosition
             Log.d("Navigate", MAIN.navController.currentDestination?.id.toString())
-            when(choose){
-                0->{
-                    if(MAIN.navController.currentDestination?.id == R.id.mainFragment) {
+            if(MAIN.navController.currentDestination?.id == R.id.mainFragment) {
+                when (choose) {
+                    0 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_blackWhiteFragment)
                     }
-                }
-                1->{
-                    if(MAIN.navController.currentDestination?.id == R.id.mainFragment) {
+
+                    1 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_addNoizeFragment)
                     }
-                }
-                2-> {
-                    if (MAIN.navController.currentDestination?.id == R.id.mainFragment) {
+
+                    2 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_cutColorsFragment)
-
                     }
-                }
-                3-> {
-                    if (MAIN.navController.currentDestination?.id == R.id.mainFragment) {
+
+                    3 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_pixelizationFragment)
-
                     }
-                }
-                4-> {
-                    if (MAIN.navController.currentDestination?.id == R.id.mainFragment) {
+
+                    4 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_gaussianBlurFragment)
-
                     }
-                }
-                5-> {
-                    if (MAIN.navController.currentDestination?.id == R.id.mainFragment) {
+
+                    5 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_mirrorVertAxisFragment)
-
                     }
+
+                    6 -> {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_mirrorHorizAxisFragment)
+                    }
+
                 }
-
             }
-
-
         }
-
-
     }
 }
