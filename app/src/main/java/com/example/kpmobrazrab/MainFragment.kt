@@ -64,6 +64,9 @@ class MainFragment : Fragment() {
                     6 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_mirrorHorizAxisFragment)
                     }
+                    7 -> {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_mirrorBothAxisFragment)
+                    }
 
                 }
             }

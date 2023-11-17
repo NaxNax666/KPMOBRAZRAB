@@ -42,6 +42,9 @@
         <action
             android:id="@+id/action_mainFragment_to_mirrorHorizAxisFragment"
             app:destination="@id/mirrorHorizAxisFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_mirrorBothAxisFragment"
+            app:destination="@id/mirrorBothAxisFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment12"
@@ -82,4 +85,9 @@
         android:name="com.example.kpmobrazrab.mirrorHorizAxisFragment"
         android:label="fragment_mirror_horiz_axis"
         tools:layout="@layout/fragment_mirror_horiz_axis" />
+    <fragment
+        android:id="@+id/mirrorBothAxisFragment"
+        android:name="com.example.kpmobrazrab.mirrorBothAxisFragment"
+        android:label="fragment_mirror_both_axis"
+        tools:layout="@layout/fragment_mirror_both_axis" />
 </navigation>
