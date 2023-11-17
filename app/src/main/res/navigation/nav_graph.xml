@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_mainFragment_to_cutColorsFragment"
             app:destination="@id/cutColorsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_pixelizationFragment"
+            app:destination="@id/pixelizationFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment12"
@@ -51,4 +54,9 @@
         android:name="com.example.kpmobrazrab.cutColorsFragment"
         android:label="fragment_cut_colors"
         tools:layout="@layout/fragment_cut_colors" />
+    <fragment
+        android:id="@+id/pixelizationFragment"
+        android:name="com.example.kpmobrazrab.pixelizationFragment"
+        android:label="fragment_pixelization"
+        tools:layout="@layout/fragment_pixelization" />
 </navigation>

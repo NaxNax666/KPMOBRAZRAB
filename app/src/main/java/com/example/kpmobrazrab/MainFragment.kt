@@ -52,6 +52,12 @@ class MainFragment : Fragment() {
 
                     }
                 }
+                3-> {
+                    if (MAIN.navController.currentDestination?.id == R.id.mainFragment) {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_pixelizationFragment)
+
+                    }
+                }
             }
 
 
