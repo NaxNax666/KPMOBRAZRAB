@@ -63,6 +63,12 @@
         <action
             android:id="@+id/action_mainFragment_to_setYFragment"
             app:destination="@id/setYFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_setUFragment"
+            app:destination="@id/setUFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_setVFragment"
+            app:destination="@id/setVFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment12"
@@ -138,4 +144,14 @@
         android:name="com.example.kpmobrazrab.SetYFragment"
         android:label="fragment_set_y"
         tools:layout="@layout/fragment_set_y" />
+    <fragment
+        android:id="@+id/setUFragment"
+        android:name="com.example.kpmobrazrab.SetUFragment"
+        android:label="fragment_set_u"
+        tools:layout="@layout/fragment_set_u" />
+    <fragment
+        android:id="@+id/setVFragment"
+        android:name="com.example.kpmobrazrab.SetVFragment"
+        android:label="fragment_set_v"
+        tools:layout="@layout/fragment_set_v" />
 </navigation>

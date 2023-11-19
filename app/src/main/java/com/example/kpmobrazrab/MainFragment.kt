@@ -85,6 +85,12 @@ class MainFragment : Fragment() {
                     13 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_setYFragment)
                     }
+                    14 -> {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_setUFragment)
+                    }
+                    15 -> {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_setVFragment)
+                    }
 
                 }
             }
