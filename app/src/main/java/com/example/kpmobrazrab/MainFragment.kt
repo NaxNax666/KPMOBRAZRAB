@@ -97,6 +97,9 @@ class MainFragment : Fragment() {
                     17 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_negativeRGBFragment)
                     }
+                    18 -> {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_convolutionWithMatrFragment)
+                    }
 
                 }
             }
