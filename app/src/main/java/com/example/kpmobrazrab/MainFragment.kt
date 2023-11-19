@@ -103,6 +103,9 @@ class MainFragment : Fragment() {
                     19 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_sobelOperatorFragment)
                     }
+                    20 -> {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_robertsCrossFragment)
+                    }
 
                 }
             }

@@ -81,6 +81,9 @@
         <action
             android:id="@+id/action_mainFragment_to_sobelOperatorFragment"
             app:destination="@id/sobelOperatorFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_robertsCrossFragment"
+            app:destination="@id/robertsCrossFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment12"
@@ -186,4 +189,9 @@
         android:name="com.example.kpmobrazrab.sobelOperatorFragment"
         android:label="fragment_sobel_operator"
         tools:layout="@layout/fragment_sobel_operator" />
+    <fragment
+        android:id="@+id/robertsCrossFragment"
+        android:name="com.example.kpmobrazrab.robertsCrossFragment"
+        android:label="fragment_roberts_cross"
+        tools:layout="@layout/fragment_roberts_cross" />
 </navigation>
