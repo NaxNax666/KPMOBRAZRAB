@@ -70,6 +70,9 @@ class MainFragment : Fragment() {
                     8 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_changeRGBFragment)
                     }
+                    9 -> {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_setRedFragment)
+                    }
 
                 }
             }

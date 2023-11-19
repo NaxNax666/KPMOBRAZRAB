@@ -48,6 +48,9 @@
         <action
             android:id="@+id/action_mainFragment_to_changeRGBFragment"
             app:destination="@id/changeRGBFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_setRedFragment"
+            app:destination="@id/setRedFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment12"
@@ -98,4 +101,9 @@
         android:name="com.example.kpmobrazrab.changeRGBFragment"
         android:label="fragment_change_r_g_b"
         tools:layout="@layout/fragment_change_r_g_b" />
+    <fragment
+        android:id="@+id/setRedFragment"
+        android:name="com.example.kpmobrazrab.setRedFragment"
+        android:label="fragment_set_red"
+        tools:layout="@layout/fragment_set_red" />
 </navigation>
