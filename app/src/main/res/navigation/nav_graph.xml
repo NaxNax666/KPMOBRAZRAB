@@ -72,6 +72,9 @@
         <action
             android:id="@+id/action_mainFragment_to_changeCMYKFragment"
             app:destination="@id/changeCMYKFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_negativeRGBFragment"
+            app:destination="@id/negativeRGBFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment12"
@@ -162,4 +165,9 @@
         android:name="com.example.kpmobrazrab.changeCMYKFragment"
         android:label="fragment_change_c_m_y_k"
         tools:layout="@layout/fragment_change_c_m_y_k" />
+    <fragment
+        android:id="@+id/negativeRGBFragment"
+        android:name="com.example.kpmobrazrab.negativeRGBFragment"
+        android:label="fragment_negative_r_g_b"
+        tools:layout="@layout/fragment_negative_r_g_b" />
 </navigation>

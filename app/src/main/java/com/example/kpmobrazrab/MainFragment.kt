@@ -94,6 +94,9 @@ class MainFragment : Fragment() {
                     16 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_changeCMYKFragment)
                     }
+                    17 -> {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_negativeRGBFragment)
+                    }
 
                 }
             }
