@@ -106,6 +106,9 @@ class MainFragment : Fragment() {
                     20 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_robertsCrossFragment)
                     }
+                    21 -> {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_autoLumAndConRegFragment)
+                    }
 
                 }
             }

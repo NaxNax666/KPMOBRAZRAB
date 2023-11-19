@@ -84,6 +84,9 @@
         <action
             android:id="@+id/action_mainFragment_to_robertsCrossFragment"
             app:destination="@id/robertsCrossFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_autoLumAndConRegFragment"
+            app:destination="@id/autoLumAndConRegFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment12"
@@ -194,4 +197,9 @@
         android:name="com.example.kpmobrazrab.robertsCrossFragment"
         android:label="fragment_roberts_cross"
         tools:layout="@layout/fragment_roberts_cross" />
+    <fragment
+        android:id="@+id/autoLumAndConRegFragment"
+        android:name="com.example.kpmobrazrab.autoLumAndConRegFragment"
+        android:label="fragment_auto_lum_and_con_reg"
+        tools:layout="@layout/fragment_auto_lum_and_con_reg" />
 </navigation>
