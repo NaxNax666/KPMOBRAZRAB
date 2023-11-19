@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sobelOperatorFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/srcImageSO"
+        android:layout_width="match_parent"
+        android:layout_height="304dp"
+        tools:src="@drawable/img1" />
+
+    <ImageView
+        android:id="@+id/destImageSO"
+        android:layout_width="match_parent"
+        android:layout_height="304dp"
+        android:layout_marginTop="350dp"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <Button
+        android:id="@+id/executeButtonSO"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="310dp"
+        android:text="Оператор Собеля" />
+
+</FrameLayout>

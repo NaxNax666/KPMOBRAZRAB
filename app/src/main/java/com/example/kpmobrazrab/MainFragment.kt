@@ -100,6 +100,9 @@ class MainFragment : Fragment() {
                     18 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_convolutionWithMatrFragment)
                     }
+                    19 -> {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_sobelOperatorFragment)
+                    }
 
                 }
             }

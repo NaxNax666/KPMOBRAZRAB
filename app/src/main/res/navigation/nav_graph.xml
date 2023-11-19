@@ -78,6 +78,9 @@
         <action
             android:id="@+id/action_mainFragment_to_convolutionWithMatrFragment"
             app:destination="@id/convolutionWithMatrFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_sobelOperatorFragment"
+            app:destination="@id/sobelOperatorFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment12"
@@ -178,4 +181,9 @@
         android:name="com.example.kpmobrazrab.convolutionWithMatrFragment"
         android:label="fragment_convolution_with_matr"
         tools:layout="@layout/fragment_convolution_with_matr" />
+    <fragment
+        android:id="@+id/sobelOperatorFragment"
+        android:name="com.example.kpmobrazrab.sobelOperatorFragment"
+        android:label="fragment_sobel_operator"
+        tools:layout="@layout/fragment_sobel_operator" />
 </navigation>
