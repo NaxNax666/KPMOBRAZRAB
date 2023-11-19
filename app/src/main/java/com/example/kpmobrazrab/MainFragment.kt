@@ -67,6 +67,9 @@ class MainFragment : Fragment() {
                     7 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_mirrorBothAxisFragment)
                     }
+                    8 -> {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_changeRGBFragment)
+                    }
 
                 }
             }
