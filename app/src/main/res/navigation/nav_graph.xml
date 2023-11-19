@@ -69,6 +69,9 @@
         <action
             android:id="@+id/action_mainFragment_to_setVFragment"
             app:destination="@id/setVFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_changeCMYKFragment"
+            app:destination="@id/changeCMYKFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment12"
@@ -154,4 +157,9 @@
         android:name="com.example.kpmobrazrab.SetVFragment"
         android:label="fragment_set_v"
         tools:layout="@layout/fragment_set_v" />
+    <fragment
+        android:id="@+id/changeCMYKFragment"
+        android:name="com.example.kpmobrazrab.changeCMYKFragment"
+        android:label="fragment_change_c_m_y_k"
+        tools:layout="@layout/fragment_change_c_m_y_k" />
 </navigation>

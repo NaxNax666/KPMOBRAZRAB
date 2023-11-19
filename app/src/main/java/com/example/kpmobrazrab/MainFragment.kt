@@ -91,6 +91,9 @@ class MainFragment : Fragment() {
                     15 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_setVFragment)
                     }
+                    16 -> {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_changeCMYKFragment)
+                    }
 
                 }
             }
