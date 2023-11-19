@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".changeYUVFragment">
+
+    <ImageView
+        android:id="@+id/srcImageCYUV"
+        android:layout_width="match_parent"
+        android:layout_height="234dp"
+        tools:src="@drawable/img1" />
+
+    <ImageView
+        android:id="@+id/destImageCYUV"
+        android:layout_width="match_parent"
+        android:layout_height="259dp"
+        android:layout_gravity="bottom"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <Button
+        android:id="@+id/executeButtoncYUV"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="400dp"
+        android:text="Изменить YUV" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="75dp"
+        android:layout_height="34dp"
+
+        android:layout_gravity="left"
+        android:layout_marginTop="250dp"
+        android:autoSizeTextType="uniform"
+        android:foregroundGravity="center"
+        android:gravity="center|center_horizontal"
+        android:text="Яркость" />
+
+    <EditText
+        android:id="@+id/YEditTextYUV"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="77dp"
+        android:layout_marginTop="250dp"
+        android:autoSizeTextType="uniform"
+        android:ems="10"
+        android:text="22" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="76dp"
+        android:layout_height="40dp"
+        android:layout_gravity="left"
+        android:layout_marginVertical="300dp"
+
+        android:autoSizeTextType="uniform"
+        android:foregroundGravity="center"
+        android:gravity="center_vertical"
+        android:text="U" />
+
+    <EditText
+        android:id="@+id/UEditText"
+        android:layout_width="149dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="77dp"
+        android:layout_marginTop="300dp"
+        android:autoSizeTextType="uniform"
+        android:ems="10" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="76dp"
+        android:layout_height="40dp"
+        android:layout_gravity="left"
+        android:layout_marginVertical="350dp"
+
+        android:autoSizeTextType="uniform"
+        android:foregroundGravity="center"
+        android:gravity="center_vertical"
+        android:text="V" />
+
+    <EditText
+        android:id="@+id/VEditText"
+        android:layout_width="149dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="77dp"
+        android:layout_marginTop="350dp"
+        android:autoSizeTextType="uniform"
+        android:ems="10" />
+
+</FrameLayout>

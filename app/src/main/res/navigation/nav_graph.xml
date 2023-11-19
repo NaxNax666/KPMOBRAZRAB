@@ -57,6 +57,9 @@
         <action
             android:id="@+id/action_mainFragment_to_setBlueFragment"
             app:destination="@id/setBlueFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_changeYUVFragment"
+            app:destination="@id/changeYUVFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment12"
@@ -122,4 +125,9 @@
         android:name="com.example.kpmobrazrab.setBlueFragment"
         android:label="fragment_set_blue"
         tools:layout="@layout/fragment_set_blue" />
+    <fragment
+        android:id="@+id/changeYUVFragment"
+        android:name="com.example.kpmobrazrab.changeYUVFragment"
+        android:label="fragment_change_y_u_v"
+        tools:layout="@layout/fragment_change_y_u_v" />
 </navigation>
