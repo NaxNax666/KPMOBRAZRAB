@@ -109,6 +109,9 @@ class MainFragment : Fragment() {
                     21 -> {
                         MAIN.navController.navigate(R.id.action_mainFragment_to_autoLumAndConRegFragment)
                     }
+                    22 -> {
+                        MAIN.navController.navigate(R.id.action_mainFragment_to_shiftImageFragment)
+                    }
 
                 }
             }

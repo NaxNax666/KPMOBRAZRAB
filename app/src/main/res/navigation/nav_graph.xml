@@ -87,6 +87,9 @@
         <action
             android:id="@+id/action_mainFragment_to_autoLumAndConRegFragment"
             app:destination="@id/autoLumAndConRegFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_shiftImageFragment"
+            app:destination="@id/shiftImageFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment12"
@@ -202,4 +205,9 @@
         android:name="com.example.kpmobrazrab.autoLumAndConRegFragment"
         android:label="fragment_auto_lum_and_con_reg"
         tools:layout="@layout/fragment_auto_lum_and_con_reg" />
+    <fragment
+        android:id="@+id/shiftImageFragment"
+        android:name="com.example.kpmobrazrab.shiftImageFragment"
+        android:label="fragment_shift_image"
+        tools:layout="@layout/fragment_shift_image" />
 </navigation>
