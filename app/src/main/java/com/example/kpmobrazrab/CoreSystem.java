@@ -273,8 +273,8 @@ public class CoreSystem {
 
     public static Bitmap Pixelization(Bitmap bitmap, int pixel_size) {//Пикселизация
         ReadBMPIntoArray(bitmap);
-        int nx=(int)(Math.floor(1.0*x/pixel_size)-1);//Количество больших пикселей по горизонтали
-        int ny=(int)(Math.floor(1.0*y/pixel_size)-1);//Округление до целого в меньшую сторону (-1 чтобы от 0 считать, как и пиксели)
+        int nx=(int)(Math.floor(1.0*x/pixel_size)-0);//Количество больших пикселей по горизонтали
+        int ny=(int)(Math.floor(1.0*y/pixel_size)-0);//Округление до целого в меньшую сторону (-1 чтобы от 0 считать, как и пиксели)
         //Пикселизация для Red
         for(int i=0;i<y;i++){for(int j=0;j<x;j++){pxbuf[i][j]=ByteToInt(px1red[i][j]);};}
         for(int a=0;a<ny+1;a++){
