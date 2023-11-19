@@ -26,11 +26,11 @@ class setGreenFragment : Fragment() {
 
         binding.executeButtonSG.setOnClickListener {
 
-            val red = binding.strenghtEditTextSG.text.toString().toInt()
+            val green = binding.strenghtEditTextSG.text.toString().toInt()
 
             val bitmap = (binding.srcImageSG.getDrawable() as BitmapDrawable).bitmap
 
-            binding.destImageSG.setImageBitmap(CoreSystem.SetGreen(bitmap, red))
+            binding.destImageSG.setImageBitmap(CoreSystem.SetGreen(bitmap, green))
         }
     }
 }

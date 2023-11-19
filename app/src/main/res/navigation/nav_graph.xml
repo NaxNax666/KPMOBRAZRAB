@@ -54,6 +54,9 @@
         <action
             android:id="@+id/action_mainFragment_to_setGreenFragment"
             app:destination="@id/setGreenFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_setBlueFragment"
+            app:destination="@id/setBlueFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment12"
@@ -114,4 +117,9 @@
         android:name="com.example.kpmobrazrab.setGreenFragment"
         android:label="fragment_set_green"
         tools:layout="@layout/fragment_set_green" />
+    <fragment
+        android:id="@+id/setBlueFragment"
+        android:name="com.example.kpmobrazrab.setBlueFragment"
+        android:label="fragment_set_blue"
+        tools:layout="@layout/fragment_set_blue" />
 </navigation>
