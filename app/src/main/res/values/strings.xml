@@ -27,4 +27,6 @@
         <item>Автоматическая регулировка значений яркости и контраста</item>
         <item>Циклически сдвинуть изображение</item>
     </string-array>
+    <string name="openNav">op</string>
+    <string name="closeNav">close</string>
 </resources>
