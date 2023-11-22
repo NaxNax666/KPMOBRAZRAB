@@ -21,7 +21,7 @@ class robertsCrossFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.srcImageRO.setImageResource(R.drawable.img1)
+        binding.srcImageRO.setImageBitmap(DataClass._bitmap)
         binding.executeButtonRO.setOnClickListener {
 
             val bitmap = (binding.srcImageRO.getDrawable() as BitmapDrawable).bitmap

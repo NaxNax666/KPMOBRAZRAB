@@ -22,7 +22,7 @@ class blackWhiteFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.srcImageWB.setImageResource(R.drawable.img1)
+        binding.srcImageWB.setImageBitmap(DataClass._bitmap)
         binding.executeButtonWB.setOnClickListener {
 
             val bitmap = (binding.srcImageWB.getDrawable() as BitmapDrawable).bitmap

@@ -23,7 +23,7 @@ class addNoizeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.srcImageAWN.setImageResource(R.drawable.img1)
+        binding.srcImageAWN.setImageBitmap(DataClass._bitmap)
 
         binding.executeButtonAWN.setOnClickListener {
 

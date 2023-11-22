@@ -21,7 +21,7 @@ class sobelOperatorFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.srcImageSO.setImageResource(R.drawable.img1)
+        binding.srcImageSO.setImageBitmap(DataClass._bitmap)
         binding.executeButtonSO.setOnClickListener {
 
             val bitmap = (binding.srcImageSO.getDrawable() as BitmapDrawable).bitmap

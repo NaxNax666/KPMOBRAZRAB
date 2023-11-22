@@ -22,7 +22,7 @@ class SetUFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.srcImageSU.setImageResource(R.drawable.img1)
+        binding.srcImageSU.setImageBitmap(DataClass._bitmap)
 
         binding.executeButtonSU.setOnClickListener {
 

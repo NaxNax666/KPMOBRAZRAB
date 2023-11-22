@@ -22,7 +22,7 @@ class mirrorHorizAxisFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.srcImageMHA.setImageResource(R.drawable.img1)
+        binding.srcImageMHA.setImageBitmap(DataClass._bitmap)
         binding.executeButtonMHA.setOnClickListener {
 
             val bitmap = (binding.srcImageMHA.getDrawable() as BitmapDrawable).bitmap

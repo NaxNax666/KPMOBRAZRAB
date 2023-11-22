@@ -21,7 +21,7 @@ class negativeRGBFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.srcImageNRGB.setImageResource(R.drawable.img1)
+        binding.srcImageNRGB.setImageBitmap(DataClass._bitmap)
         binding.executeButtonNRGB.setOnClickListener {
 
             val bitmap = (binding.srcImageNRGB.getDrawable() as BitmapDrawable).bitmap

@@ -22,7 +22,7 @@ class cutColorsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.srcImageCC.setImageResource(R.drawable.img1)
+        binding.srcImageCC.setImageBitmap(DataClass._bitmap)
 
         binding.executeButtonCC.setOnClickListener {
             

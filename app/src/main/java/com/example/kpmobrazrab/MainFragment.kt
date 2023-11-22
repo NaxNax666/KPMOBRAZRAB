@@ -1,6 +1,7 @@
 package com.example.kpmobrazrab
 
 import MAIN
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -25,11 +26,16 @@ class MainFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.srcImage.setImageResource(R.drawable.img1)
+
+        DataClass._bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.img1)
+        binding.srcImage.setImageBitmap(DataClass._bitmap)
         ArrayAdapter.createFromResource(this.requireContext(), R.array.function_array, android.R.layout.simple_spinner_item).also {
             adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             binding.chooseSpinner.adapter = adapter
+        }
+        binding.openFileButton.setOnClickListener{
+            binding.srcImage.setImageBitmap(DataClass._bitmap)
         }
 
         binding.startButton.setOnClickListener {

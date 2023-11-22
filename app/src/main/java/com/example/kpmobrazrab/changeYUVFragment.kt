@@ -22,7 +22,7 @@ class changeYUVFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.srcImageCYUV.setImageResource(R.drawable.img1)
+        binding.srcImageCYUV.setImageBitmap(DataClass._bitmap)
 
         binding.executeButtoncYUV.setOnClickListener {
 

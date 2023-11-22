@@ -22,7 +22,7 @@ class convolutionWithMatrFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.srcImageCWM.setImageResource(R.drawable.img1)
+        binding.srcImageCWM.setImageBitmap(DataClass._bitmap)
 
         binding.executeButtonCWM.setOnClickListener {
 

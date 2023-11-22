@@ -22,7 +22,7 @@ class setGreenFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.srcImageSG.setImageResource(R.drawable.img1)
+        binding.srcImageSG.setImageBitmap(DataClass._bitmap)
 
         binding.executeButtonSG.setOnClickListener {
 

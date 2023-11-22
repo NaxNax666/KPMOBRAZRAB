@@ -24,7 +24,7 @@ class Fragment1 : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.imageView.setImageResource(R.drawable.img1)
+        binding.imageView.setImageBitmap(DataClass._bitmap)
         binding.executeButton.setOnClickListener {
 
             val bitmap = (binding.imageView.getDrawable() as BitmapDrawable).bitmap

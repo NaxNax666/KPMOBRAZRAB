@@ -22,7 +22,7 @@ class shiftImageFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.srcImageSI.setImageResource(R.drawable.img1)
+        binding.srcImageSI.setImageBitmap(DataClass._bitmap)
 
         binding.executeButtonSI.setOnClickListener {
 

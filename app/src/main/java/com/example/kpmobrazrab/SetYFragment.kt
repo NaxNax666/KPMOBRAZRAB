@@ -22,7 +22,7 @@ class SetYFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.srcImageSY.setImageResource(R.drawable.img1)
+        binding.srcImageSY.setImageBitmap(DataClass._bitmap)
 
         binding.executeButtonSY.setOnClickListener {
 

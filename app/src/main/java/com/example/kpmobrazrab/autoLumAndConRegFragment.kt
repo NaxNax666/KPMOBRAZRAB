@@ -21,7 +21,7 @@ class autoLumAndConRegFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.srcImageALACRB.setImageResource(R.drawable.img1)
+        binding.srcImageALACRB.setImageBitmap(DataClass._bitmap)
         binding.executeButtonALACRB.setOnClickListener {
 
             val bitmap = (binding.srcImageALACRB.getDrawable() as BitmapDrawable).bitmap

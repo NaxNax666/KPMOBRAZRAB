@@ -22,7 +22,7 @@ class pixelizationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.srcImageP.setImageResource(R.drawable.img1)
+        binding.srcImageP.setImageBitmap(DataClass._bitmap)
 
         binding.executeButtonP.setOnClickListener {
 

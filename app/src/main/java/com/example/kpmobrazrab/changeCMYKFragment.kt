@@ -22,7 +22,7 @@ class changeCMYKFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.srcImageCCMYK.setImageResource(R.drawable.img1)
+        binding.srcImageCCMYK.setImageBitmap(DataClass._bitmap)
 
         binding.executeButtonCCMYK.setOnClickListener {
 

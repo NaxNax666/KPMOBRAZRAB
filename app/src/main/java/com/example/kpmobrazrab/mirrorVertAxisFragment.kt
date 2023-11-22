@@ -21,7 +21,7 @@ class mirrorVertAxisFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.srcImageMVA.setImageResource(R.drawable.img1)
+        binding.srcImageMVA.setImageBitmap(DataClass._bitmap)
         binding.executeButtonMVA.setOnClickListener {
 
             val bitmap = (binding.srcImageMVA.getDrawable() as BitmapDrawable).bitmap

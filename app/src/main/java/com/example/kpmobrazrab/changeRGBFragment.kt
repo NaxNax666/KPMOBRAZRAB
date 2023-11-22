@@ -22,7 +22,7 @@ class changeRGBFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.srcImageCRGB.setImageResource(R.drawable.img1)
+        binding.srcImageCRGB.setImageBitmap(DataClass._bitmap)
 
         binding.executeButtoncRGB.setOnClickListener {
 

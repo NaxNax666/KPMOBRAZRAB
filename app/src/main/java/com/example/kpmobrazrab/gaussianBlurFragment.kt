@@ -22,7 +22,7 @@ class gaussianBlurFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.srcImageGB.setImageResource(R.drawable.img1)
+        binding.srcImageGB.setImageBitmap(DataClass._bitmap)
 
         binding.executeButtonGB.setOnClickListener {
 
