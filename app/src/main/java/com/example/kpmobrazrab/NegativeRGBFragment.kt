@@ -27,7 +27,16 @@ class NegativeRGBFragment : Fragment() {
         binding.executeButtonNRGB.setOnClickListener {
 
             (binding.srcImageNRGB.drawable as? BitmapDrawable?)?.let {
-                binding.srcImageNRGB.setImageBitmap(CoreSystem.NegativeRGB(it.bitmap, 1,1,1))
+                runCatching {
+                    CoreSystem.NegativeRGB(it.bitmap, 1,1,1)
+                }.onFailure {
+                    // Log fail "java.lang.ArrayIndexOutOfBoundsException: length=1100; index=1417"
+                }.onSuccess {
+                    // Do on success
+                    // Also ".getOrThrow()", ".getOrElse()", ".getOrDefault()". Etc.
+                }.getOrNull()?.let {
+                    binding.srcImageNRGB.setImageBitmap(it)
+                }
             }
         }
     }

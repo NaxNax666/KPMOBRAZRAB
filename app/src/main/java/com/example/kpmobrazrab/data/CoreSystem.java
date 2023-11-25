@@ -4,10 +4,15 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.File;
 import java.io.FileInputStream;
+
+import kotlin.jvm.Throws;
 
 public class CoreSystem {
 
@@ -610,7 +615,10 @@ public class CoreSystem {
        return WriteArrayIntoBMP();
     }
 
-    public static Bitmap NegativeRGB(Bitmap bitmap, int NegR, int NegG, int NegB) {//Поменять значения R, G, B на неготив
+    // Mark variables with androidx.annotation.NonNull - @Nullable to avoid NullPointerExceptions
+    // Use try-catches to catch errors
+    // Mark methods with "throws" keywords, if they cat throw an Exception
+    public static Bitmap NegativeRGB(@Nullable @NonNull Bitmap bitmap, int NegR, int NegG, int NegB) throws ArrayIndexOutOfBoundsException {//Поменять значения R, G, B на неготив
         ReadBMPIntoArray(bitmap);//0 или меньше = без негатива, 1 или больше = негатив
         for(int i=0;i<y;i++){
             for(int j=0;j<x;j++){
