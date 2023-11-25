@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".shiftImageFragment">
+    tools:context=".ShiftImageFragment">
 
     <ImageView
         android:id="@+id/srcImageSI"
@@ -69,6 +69,8 @@
         android:layout_marginLeft="55dp"
         android:layout_marginTop="350dp"
         android:autoSizeTextType="uniform"
-        android:ems="10" />
+        android:ems="10"
+        android:text="0"
+        />
 
 </FrameLayout>

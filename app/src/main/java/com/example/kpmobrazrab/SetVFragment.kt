@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.kpmobrazrab.data.CoreSystem
+import com.example.kpmobrazrab.data.Storage
 import com.example.kpmobrazrab.databinding.FragmentSetVBinding
 
 
@@ -22,15 +24,15 @@ class SetVFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.srcImageSV.setImageBitmap(DataClass._bitmap)
+        binding.srcImageSV.setImageBitmap(Storage.bitmap)
 
         binding.executeButtonSV.setOnClickListener {
 
             val blue = binding.strenghtEditTextSV.text.toString().toInt()
 
-            val bitmap = (binding.srcImageSV.getDrawable() as BitmapDrawable).bitmap
-
-            binding.destImageSV.setImageBitmap(CoreSystem.SetV(bitmap, blue))
+            (binding.srcImageSV.drawable as? BitmapDrawable?)?.let {
+                binding.srcImageSV.setImageBitmap(CoreSystem.SetV(it.bitmap, blue))
+            }
         }
     }
 }

@@ -6,21 +6,11 @@
     app:startDestination="@id/mainFragment">
 
     <fragment
-        android:id="@+id/fragment2"
-        android:name="com.example.kpmobrazrab.Fragment2"
-        android:label="fragment_2"
-        tools:layout="@layout/fragment_2" />
-    <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.kpmobrazrab.MainFragment"
+        android:name="com.example.kpmobrazrab.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
-        <action
-            android:id="@+id/action_mainFragment_to_fragment2"
-            app:destination="@id/fragment2" />
-        <action
-            android:id="@+id/action_mainFragment_to_fragment12"
-            app:destination="@id/fragment12" />
+
         <action
             android:id="@+id/action_mainFragment_to_blackWhiteFragment"
             app:destination="@id/blackWhiteFragment" />
@@ -92,72 +82,68 @@
             app:destination="@id/shiftImageFragment" />
     </fragment>
     <fragment
-        android:id="@+id/fragment12"
-        android:name="com.example.kpmobrazrab.Fragment1"
-        android:label="fragment_1"
-        tools:layout="@layout/fragment_1" />
-    <fragment
         android:id="@+id/blackWhiteFragment"
-        android:name="com.example.kpmobrazrab.blackWhiteFragment"
+        android:name="com.example.kpmobrazrab.BlackWhiteFragment"
         android:label="fragment_black_white"
         tools:layout="@layout/fragment_black_white" />
     <fragment
         android:id="@+id/addNoizeFragment"
-        android:name="com.example.kpmobrazrab.addNoizeFragment"
+        android:name="com.example.kpmobrazrab.AddNoizeFragment"
         android:label="fragment_add_noize"
         tools:layout="@layout/fragment_add_noize" />
     <fragment
         android:id="@+id/cutColorsFragment"
-        android:name="com.example.kpmobrazrab.cutColorsFragment"
+        android:name="com.example.kpmobrazrab.CutColorsFragment"
         android:label="fragment_cut_colors"
         tools:layout="@layout/fragment_cut_colors" />
     <fragment
         android:id="@+id/pixelizationFragment"
-        android:name="com.example.kpmobrazrab.pixelizationFragment"
+        android:name="com.example.kpmobrazrab.PixelizationFragment"
         android:label="fragment_pixelization"
         tools:layout="@layout/fragment_pixelization" />
     <fragment
         android:id="@+id/gaussianBlurFragment"
-        android:name="com.example.kpmobrazrab.gaussianBlurFragment"
+        android:name="com.example.kpmobrazrab.GaussianBlurFragment"
         android:label="fragment_gaussian_blur"
         tools:layout="@layout/fragment_gaussian_blur" />
     <fragment
         android:id="@+id/mirrorVertAxisFragment"
-        android:name="com.example.kpmobrazrab.mirrorVertAxisFragment"
-        android:label="mirrorVertAxisFragment" />
+        android:name="com.example.kpmobrazrab.MirrorVertAxisFragment"
+        android:label="fragment_mirror_vert_axis"
+        tools:layout="@layout/fragment_mirror_vert_axis"/>
     <fragment
         android:id="@+id/mirrorHorizAxisFragment"
-        android:name="com.example.kpmobrazrab.mirrorHorizAxisFragment"
+        android:name="com.example.kpmobrazrab.MirrorHorizAxisFragment"
         android:label="fragment_mirror_horiz_axis"
         tools:layout="@layout/fragment_mirror_horiz_axis" />
     <fragment
         android:id="@+id/mirrorBothAxisFragment"
-        android:name="com.example.kpmobrazrab.mirrorBothAxisFragment"
+        android:name="com.example.kpmobrazrab.MirrorBothAxisFragment"
         android:label="fragment_mirror_both_axis"
         tools:layout="@layout/fragment_mirror_both_axis" />
     <fragment
         android:id="@+id/changeRGBFragment"
-        android:name="com.example.kpmobrazrab.changeRGBFragment"
+        android:name="com.example.kpmobrazrab.ChangeRGBFragment"
         android:label="fragment_change_r_g_b"
         tools:layout="@layout/fragment_change_r_g_b" />
     <fragment
         android:id="@+id/setRedFragment"
-        android:name="com.example.kpmobrazrab.setRedFragment"
+        android:name="com.example.kpmobrazrab.SetRedFragment"
         android:label="fragment_set_red"
         tools:layout="@layout/fragment_set_red" />
     <fragment
         android:id="@+id/setGreenFragment"
-        android:name="com.example.kpmobrazrab.setGreenFragment"
+        android:name="com.example.kpmobrazrab.SetGreenFragment"
         android:label="fragment_set_green"
         tools:layout="@layout/fragment_set_green" />
     <fragment
         android:id="@+id/setBlueFragment"
-        android:name="com.example.kpmobrazrab.setBlueFragment"
+        android:name="com.example.kpmobrazrab.SetBlueFragment"
         android:label="fragment_set_blue"
         tools:layout="@layout/fragment_set_blue" />
     <fragment
         android:id="@+id/changeYUVFragment"
-        android:name="com.example.kpmobrazrab.changeYUVFragment"
+        android:name="com.example.kpmobrazrab.ChangeYUVFragment"
         android:label="fragment_change_y_u_v"
         tools:layout="@layout/fragment_change_y_u_v" />
     <fragment
@@ -177,37 +163,37 @@
         tools:layout="@layout/fragment_set_v" />
     <fragment
         android:id="@+id/changeCMYKFragment"
-        android:name="com.example.kpmobrazrab.changeCMYKFragment"
+        android:name="com.example.kpmobrazrab.HangeCMYKFragment"
         android:label="fragment_change_c_m_y_k"
         tools:layout="@layout/fragment_change_c_m_y_k" />
     <fragment
         android:id="@+id/negativeRGBFragment"
-        android:name="com.example.kpmobrazrab.negativeRGBFragment"
+        android:name="com.example.kpmobrazrab.NegativeRGBFragment"
         android:label="fragment_negative_r_g_b"
         tools:layout="@layout/fragment_negative_r_g_b" />
     <fragment
         android:id="@+id/convolutionWithMatrFragment"
-        android:name="com.example.kpmobrazrab.convolutionWithMatrFragment"
+        android:name="com.example.kpmobrazrab.ConvolutionWithMatrFragment"
         android:label="fragment_convolution_with_matr"
         tools:layout="@layout/fragment_convolution_with_matr" />
     <fragment
         android:id="@+id/sobelOperatorFragment"
-        android:name="com.example.kpmobrazrab.sobelOperatorFragment"
+        android:name="com.example.kpmobrazrab.SobelOperatorFragment"
         android:label="fragment_sobel_operator"
         tools:layout="@layout/fragment_sobel_operator" />
     <fragment
         android:id="@+id/robertsCrossFragment"
-        android:name="com.example.kpmobrazrab.robertsCrossFragment"
+        android:name="com.example.kpmobrazrab.RobertsCrossFragment"
         android:label="fragment_roberts_cross"
         tools:layout="@layout/fragment_roberts_cross" />
     <fragment
         android:id="@+id/autoLumAndConRegFragment"
-        android:name="com.example.kpmobrazrab.autoLumAndConRegFragment"
+        android:name="com.example.kpmobrazrab.AutoLumAndConRegFragment"
         android:label="fragment_auto_lum_and_con_reg"
         tools:layout="@layout/fragment_auto_lum_and_con_reg" />
     <fragment
         android:id="@+id/shiftImageFragment"
-        android:name="com.example.kpmobrazrab.shiftImageFragment"
+        android:name="com.example.kpmobrazrab.ShiftImageFragment"
         android:label="fragment_shift_image"
         tools:layout="@layout/fragment_shift_image" />
 </navigation>
